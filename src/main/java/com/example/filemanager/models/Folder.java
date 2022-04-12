@@ -25,7 +25,7 @@ public class Folder {
     @JoinColumn(name="user_id", nullable = false)
     private User user;
 
-    public Folder(Long id, String title, User user ) {
+    public Folder(String title, User user ) {
         this.id = id;
         this.title = title;
         this.files = new ArrayList<>();

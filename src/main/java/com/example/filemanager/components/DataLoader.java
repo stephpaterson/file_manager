@@ -1,5 +1,7 @@
 package com.example.filemanager.components;
 
+import com.example.filemanager.models.File;
+import com.example.filemanager.models.Folder;
 import com.example.filemanager.models.User;
 import com.example.filemanager.repositories.FileRepository;
 import com.example.filemanager.repositories.FolderRepository;
@@ -36,6 +38,12 @@ public class DataLoader implements ApplicationRunner {
 
         User rachel = new User("Rachel");
         userRepository.save(rachel);
+
+        Folder myDocuments = new Folder("My Documents",steph);
+        folderRepository.save(myDocuments);
+
+        File importantDocument = new File("Important Document", "pdf", "1MB", myDocuments);
+        fileRepository.save(importantDocument);
 
     }
 }
